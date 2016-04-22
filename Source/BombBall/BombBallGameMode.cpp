@@ -25,6 +25,24 @@ void ABombBallGameMode::StartPlay()
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Hello World"));
 	}
+
+	redScore = 0;
+	blueScore = 0;
+
+	bool redOrBlue = true; //initial character is red
+	for (TActorIterator<ABombBallCharacter> ActorItr(GetWorld()); ActorItr; ++ActorItr)
+	{
+		if (redOrBlue)
+		{
+			redTeam.Add(*ActorItr);
+			redOrBlue = false;
+		}
+		else
+		{
+			blueTeam.Add(*ActorItr);
+			redOrBlue = true;
+		}
+	}
 }
 
 void ABombBallGameMode::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass)

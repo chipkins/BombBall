@@ -9,6 +9,14 @@
 /**
  * 
  */
+UENUM(BlueprintType)
+enum class EGameState : uint8
+{
+	State_MainMenu		UMETA(DisplayName = "MainMenu"),
+	State_ServerList	UMETA(DisplayName = "ServerList"),
+	State_NewGame		UMETA(DisplayName = "NewGame"),
+};
+
 UCLASS()
 class BOMBBALL_API AMenu : public AGameMode
 {

@@ -21,6 +21,8 @@ public:
 		FVector MuzzleOffset;
 	UPROPERTY(EditDefaultsOnly, Category = Projectile)
 		TSubclassOf<class ABombBallProjectile> ProjectileClass;
+	UPROPERTY(EditDefaultsOnly, Category = Projectile)
+		float FireRate;
 
 	// Sets default values for this character's properties
 	ABombBallCharacter();

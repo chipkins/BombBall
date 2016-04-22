@@ -22,6 +22,14 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Game UI")
 		void ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass);
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Team")
+		TArray<ABombBallCharacter*> redTeam;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Team")
+		int32 redScore;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Team")
+		TArray<ABombBallCharacter*> blueTeam;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Team")
+		int32 blueScore;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game UI")
